@@ -1,5 +1,7 @@
 import React,{useState} from 'react'
 import '../Pizza/Pizza.css'
+import { useDispatch,useSelector } from 'react-redux'
+import { addToCart } from '../../Actions/cartActions'
 
 import pizaimg from '../../pizzaimages/Margherit.jpg'
 
@@ -13,7 +15,14 @@ const Pizza = ({pizza}) => {
   const [base,setBase] =useState('Hand Tossed')
   const [extratoppings,setExtratoppings] =useState('olives')
   const [cheese,setCheese] =useState('extra cheese')
-  
+
+  const dispatch =useDispatch()
+
+  const addToCartHandler =()=>{
+    dispatch(addToCart(pizza,Quantity,varients))
+  }
+
+ 
 
   const getPrice = () => {
     const priceObj = pizza.prices.find(price => price[varients])
@@ -111,7 +120,7 @@ const Pizza = ({pizza}) => {
 
 
     </div>
-    <button className="btn" >
+    <button className="btn" onClick={addToCartHandler} >
       Add to cart
     </button>
    

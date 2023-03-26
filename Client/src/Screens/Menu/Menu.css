@@ -2,16 +2,17 @@
 
 .datapizza{
 display: flex;
-   gap: 22%;
+  
    flex-wrap: wrap;
     margin-top: 0px;
-    justify-content: center;
+    justify-content: space-between;
     height: 100vh;
     
     padding-top: 10rem;
-    margin: auto 0rem;
-    
+   
+    margin: 0 10rem;
 
+   
 
 
 }

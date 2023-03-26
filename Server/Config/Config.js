@@ -10,7 +10,7 @@ const url= process.env.MONGO_URI
 
     })
 
-    console.log(`mongo db dtabase connected  ${conn.connect.host} `)
+    console.log(`mongo db dtabase connected   `)
 } catch(error){
 console.log(`error:${error.message}`)
 }

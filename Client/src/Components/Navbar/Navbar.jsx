@@ -25,7 +25,8 @@ const Navbar = () => {
     <SideBarButton  title="Menu" to="/Menu"   />
     <SideBarButton title="Orders" to="/Orders" />
     <SideBarButton title="Cart" to="/Cart" />
-    <SideBarButton title="Logout" to="/Logout" / >
+    <SideBarButton title="Login" to="/Login" / >
+    <SideBarButton title="Registration" to="/Registration" / >
     
 
 </div>

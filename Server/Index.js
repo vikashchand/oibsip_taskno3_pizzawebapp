@@ -17,6 +17,10 @@ app.use(morgan('dev'))
 
 
 //route
+app.use(require('./routes/pizzaRoutes'));
+app.use(require('./routes/userRoutes'));
+
+
 
 app.get('/', (req, res) => {
 
