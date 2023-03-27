@@ -3,26 +3,45 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { getAllPizzaReducer } from './Reducers/pizzaReducer';
 import { cartReducer } from './Reducers/cartReducer';
-import { RegisterUserReducer } from './Reducers/userReducer';
+import { RegisterUserReducer,loginUserReducer } from './Reducers/userReducer';
+import { placeOrderReducer } from './Reducers/orderReducer';
+
+let currentUser =[];
+
+
+try {
+  cartItems = localStorage.getItem('currentUser') ? JSON.parse(localStorage.getItem('currentUser')):[];
+} catch (e) {
+  console.log('Error parsing JSON: ', e);
+}
 
 
 const rootReducer = combineReducers({
   getAllPizzaReducer: getAllPizzaReducer,
   cartReducer:cartReducer,
-  RegisterUserReducer:RegisterUserReducer
+  RegisterUserReducer:RegisterUserReducer,
+  loginUserReducer:loginUserReducer,
+  placeOrderReducer:placeOrderReducer
 });
 
 
-const cartItems =localStorage.getItem('cartItems')? JSON.parse(localStorage.getItem('cartItems')):[]
+let cartItems = [];
 
-const initialState = {
-
-cartReducer :{
-  cartItems:cartItems
+try {
+  cartItems = localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : [];
+} catch (e) {
+  console.log('Error parsing JSON: ', e);
 }
 
-};
+const initialState = {
+  cartReducer: {
+    cartItems,
+  },  
 
+  loginUserReducer:{
+    currentUser,
+  }
+};
 const middleware = [thunk];
 
 const store = configureStore({
@@ -31,5 +50,6 @@ const store = configureStore({
   devTools: process.env.NODE_ENV !== 'production',
   middleware,
 });
+
 
 export default store;

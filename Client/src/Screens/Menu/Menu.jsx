@@ -28,8 +28,8 @@ useEffect (()=>{dispatch(getAllPizzas());
 
         :(
           <>
-          {pizzas.map((pizza, index) => (
-
+          {pizzas.map((pizza) => (
+            
             <Pizza pizza={pizza} />
          
         ))}

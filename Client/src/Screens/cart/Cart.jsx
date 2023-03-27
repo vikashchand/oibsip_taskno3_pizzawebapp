@@ -8,6 +8,7 @@ import {addToCart,deleteFromCart} from '../../Actions/cartActions'
 
 import '../cart/Cart.css'
 import  pizaimg from '../../pizzaimages/Margherit.jpg'
+import Checkout from '../../Components/checkout/Checkout'
 
 
 function Cart() {
@@ -53,10 +54,8 @@ function Cart() {
     ) }
 
 
-    <div> <h1>subtotal:{subTotal}</h1>
-    <button className="btna"  >
-    Payment 
-  </button>
+    <div> <h1>subTotal:{subTotal}</h1>
+    <Checkout  subTotal={subTotal} />
     
     
     </div>
