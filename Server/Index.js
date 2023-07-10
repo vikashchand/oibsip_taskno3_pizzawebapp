@@ -3,12 +3,15 @@ const dotenv =require('dotenv')
 const cors = require('cors');
 
 const connectDB =require('./Config/Config.js')
-const morgan = require('morgan')
 
 
+const fs = require('fs');
+const path = require('path');
 
 // Use your routes
-app.use(express.json());
+
+
+const app = express()
 const corsOptions = {
    origin: 'https://vikashpizza.vercel.app',
    credentials: true,
@@ -22,10 +25,8 @@ dotenv.config()
 
 connectDB()
 
-const app = express()
 
 app.use(express.json())
-app.use(morgan('dev'))
 
 
 //route
