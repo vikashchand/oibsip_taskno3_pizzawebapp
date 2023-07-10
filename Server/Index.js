@@ -8,7 +8,7 @@ const morgan = require('morgan')
 
 
 // Use your routes
-
+app.use(express.json());
 const corsOptions = {
    origin: 'https://vikashpizza.vercel.app',
    credentials: true,
