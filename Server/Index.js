@@ -7,12 +7,23 @@ const morgan = require('morgan')
 
 
 
+// Use your routes
+
+const corsOptions = {
+   origin: 'https://vikashpizza.vercel.app/',
+   credentials: true,
+   optionSuccessStatus: 200,
+ };
+ app.use(cors(corsOptions));
+
+
+
 dotenv.config()
 
 connectDB()
 
 const app = express()
-app.use(cors())
+
 app.use(express.json())
 app.use(morgan('dev'))
 
