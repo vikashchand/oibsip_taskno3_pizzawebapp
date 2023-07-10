@@ -8,7 +8,7 @@ export const placeOrder =(token,subTotal)=>async (dispatch,getState)=>{
 
     try {
 
-        const res=await axios.post('/api/orders/placeorder',{
+        const res=await axios.post('https://vikashpizzas.vercel.app/api/orders/placeorder',{
             token,subTotal,currentUser,cartItems,});
         dispatch({type:'PLACE_ORDER_SUCCESS'})
         console.log(res)

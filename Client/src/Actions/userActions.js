@@ -6,7 +6,7 @@ dispatch({type:'USER_REGISTER_REQUEST'})
 
 try{
 
-    const res= await axios.post('/api/users/register',user)
+    const res= await axios.post('https://vikashpizzas.vercel.app/api/users/register',user)
     dispatch({type:'USER_REGISTER_SUCCESS'})
 }
 catch(error){
@@ -21,7 +21,7 @@ catch(error){
 export const loginUser =(user)=> async dispatch =>{
 dispatch({type:'USER_LOGIN_REQUEST'})
 try{
-    const response =await axios.post('/api/users/login',user)
+    const response =await axios.post('https://vikashpizzas.vercel.app//api/users/login',user)
     console.log(response)
     dispatch({type:'USER_LOGIN_SUCCESS',payload:response.data})
     localStorage.setItem('currentUser',JSON.stringify(response.data))
