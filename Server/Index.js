@@ -29,9 +29,9 @@ app.use(morgan('dev'))
 
 
 //route
-app.use(require('./routes/pizzaRoutes'));
-app.use(require('./routes/userRoutes'));
-app.use(require('./routes/orderRoutes'));
+app.use(require('./routes/pizzaRoutes.js'));
+app.use(require('./routes/userRoutes.js'));
+app.use(require('./routes/orderRoutes.js'));
 
 
 
