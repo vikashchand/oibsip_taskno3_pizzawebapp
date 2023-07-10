@@ -10,7 +10,7 @@ const morgan = require('morgan')
 // Use your routes
 
 const corsOptions = {
-   origin: 'https://vikashpizza.vercel.app/',
+   origin: 'https://vikashpizza.vercel.app',
    credentials: true,
    optionSuccessStatus: 200,
  };
